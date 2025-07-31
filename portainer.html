@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portainer - معرفی نرم‌افزار</title>
+  <link href="https://bootswatch.com/5/materia/bootstrap.rtl.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/shared.css">
+
+  <style>
+   
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
+  
+  <div class="container">
+    <h1 class="mb-4">
+      <!-- <img src="https://portainer.io/images/logo.svg" alt="Portainer logo" class="software-logo"> -->
+      Portainer
+    </h1>
+
+    <p class="lead"><strong>Portainer</strong> یک ابزار قدرتمند و متن‌باز برای مدیریت Docker و Kubernetes است که به تیم‌های DevOps و توسعه‌دهندگان کمک می‌کند تا محیط‌های کانتینری را از طریق رابط کاربری گرافیکی زیبا و ساده مدیریت کنند. این پلتفرم جایگزین عالی برای مدیریت پیچیده‌های خط فرمان Docker است.</p>
+
+    <h4 class="section-title">ویژگی‌های کلیدی</h4>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title"><span class="docker-logo">🐳</span> مدیریت Docker</h5>
+            <p class="card-text">کنترل کامل کانتینرها، تصاویر، شبکه‌ها و volumes با رابط بصری</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">☸️ پشتیبانی Kubernetes</h5>
+            <p class="card-text">مدیریت خوشه‌های Kubernetes، pods، services و deployments</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">🔐 کنترل دسترسی</h5>
+            <p class="card-text">RBAC، احراز هویت LDAP/OAuth و مدیریت کاربران چندگانه</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">📋 مدیریت Stacks</h5>
+            <p class="card-text">استقرار و مدیریت آسان استک‌ها با Docker Compose</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">📊 مانیتورینگ</h5>
+            <p class="card-text">نظارت real-time بر مصرف منابع و عملکرد کانتینرها</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">🔄 مدیریت Remote</h5>
+            <p class="card-text">کنترل چندین محیط Docker از یک پانل مرکزی</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">نصب و راه‌اندازی</h4>
+    <div class="card">
+      <div class="card-body">
+        <h5>نصب سریع Portainer:</h5>
+        <div class="install-code">
+# ایجاد volume برای ذخیره داده‌ها
+docker volume create portainer_data
+
+# اجرای Portainer
+docker run -d -p 8000:8000 -p 9443:9443 \
+    --name portainer --restart=always \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v portainer_data:/data \
+    portainer/portainer-ce:latest
+        </div>
+        <p class="mt-3 text-muted">پس از اجرا، به آدرس <code>https://localhost:9443</code> مراجعه کنید</p>
+      </div>
+    </div>
+
+    <div class="card mt-3">
+      <div class="card-body">
+        <h5>نصب با Docker Compose:</h5>
+        <div class="install-code">
+version: '3.8'
+
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: always
+    ports:
+      - "8000:8000"
+      - "9443:9443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  portainer_data:
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h4 class="text-success">✅ مزایا</h4>
+        <div class="card pros-cons-card">
+          <div class="card-body">
+            <ul class="mb-0">
+              <li>رابط کاربری بسیار ساده و زیبا</li>
+              <li>نصب فوق‌العاده آسان</li>
+              <li>مناسب برای مبتدیان</li>
+              <li>پشتیبانی از Docker Swarm</li>
+              <li>مدیریت چند محیط از یک جا</li>
+              <li>نسخه Community رایگان</li>
+              <li>مستندات عالی</li>
+              <li>کم‌مصرف از نظر منابع</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-warning">⚠️ محدودیت‌ها</h4>
+        <div class="card cons-card">
+          <div class="card-body">
+            <ul class="mb-0">
+              <li>برای کارهای پیشرفته محدود</li>
+              <li>برخی قابلیت‌ها فقط در نسخه تجاری</li>
+              <li>نیاز به دسترسی Docker socket</li>
+              <li>کمتر قابل سفارشی‌سازی</li>
+              <li>گاهی کند در محیط‌های بسیار بزرگ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">موارد استفاده</h4>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">🏢 محیط سازمانی</h5>
+            <p class="card-text">مدیریت containerهای تولیدی و توسعه تیم‌های مختلف</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">🎓 آموزش و یادگیری</h5>
+            <p class="card-text">یادگیری Docker و Kubernetes بدون پیچیدگی CLI</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">🏠 Home Lab</h5>
+            <p class="card-text">مدیریت آسان سرویس‌های خانگی و پروژه‌های شخصی</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">💼 DevOps Teams</h5>
+            <p class="card-text">ابزار کمکی برای مدیریت سریع و بصری containerها</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">🚀 Rapid Prototyping</h5>
+            <p class="card-text">تست سریع و deploy اپلیکیشن‌ها برای نمونه‌سازی</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">🔧 مدیریت از راه دور</h5>
+            <p class="card-text">کنترل سرورهای مختلف از یک داشبورد مرکزی</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">آمار پروژه</h4>
+    <div class="row text-center">
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>29k+</h3>
+            <p>ستاره GitHub</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>1B+</h3>
+            <p>دانلود از Docker Hub</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>500k+</h3>
+            <p>کاربر فعال</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>8+</h3>
+            <p>سال توسعه</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">مقایسه با رقبا</h4>
+    <div class="table-responsive comparison-table">
+      <table class="table table-striped mb-0">
+        <thead class="table-dark">
+          <tr>
+            <th>ویژگی</th>
+            <th>Portainer</th>
+            <th>Rancher</th>
+            <th>Docker Desktop</th>
+            <th>Kubernetes Dashboard</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>سادگی استفاده</strong></td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐</td>
+            <td>⭐⭐</td>
+          </tr>
+          <tr>
+            <td><strong>پشتیبانی Docker</strong></td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐</td>
+          </tr>
+          <tr>
+            <td><strong>پشتیبانی Kubernetes</strong></td>
+            <td>⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐⭐</td>
+          </tr>
+          <tr>
+            <td><strong>قیمت</strong></td>
+            <td>✅ رایگان/تجاری</td>
+            <td>✅ رایگان/تجاری</td>
+            <td>✅ رایگان/تجاری</td>
+            <td>✅ رایگان</td>
+          </tr>
+          <tr>
+            <td><strong>نصب و راه‌اندازی</strong></td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐</td>
+            <td>⭐⭐</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="section-title text-danger">⚠️ نکات امنیتی</h4>
+    <div class="alert alert-security">
+      <ul class="mb-0">
+        <li><strong>رمز عبور اولیه:</strong> حتماً پس از اولین ورود، رمز عبور قوی تنظیم کنید</li>
+        <li><strong>HTTPS:</strong> در محیط production از SSL certificate استفاده کنید</li>
+        <li><strong>Docker Socket:</strong> دسترسی به Docker socket را محدود کنید</li>
+        <li><strong>Network Security:</strong> از reverse proxy و firewall استفاده کنید</li>
+        <li><strong>به‌روزرسانی:</strong> نسخه‌های جدید را به‌طور منظم نصب کنید</li>
+        <li><strong>Backup:</strong> از volume داده‌ها بکاپ منظم تهیه کنید</li>
+      </ul>
+    </div>
+
+    <h4 class="section-title">پیکربندی پیشرفته</h4>
+    <div class="accordion" id="advancedConfig">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ssl">
+            تنظیم SSL/TLS
+          </button>
+        </h2>
+        <div id="ssl" class="accordion-collapse collapse" data-bs-parent="#advancedConfig">
+          <div class="accordion-body">
+            <div class="install-code">
+# استفاده از Let's Encrypt با Traefik
+version: '3.8'
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portainer.rule=Host(`portainer.yourdomain.com`)"
+      - "traefik.http.routers.portainer.tls.certresolver=letsencrypt"
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#remote">
+            اتصال به محیط‌های Remote
+          </button>
+        </h2>
+        <div id="remote" class="accordion-collapse collapse" data-bs-parent="#advancedConfig">
+          <div class="accordion-body">
+            <p>برای اتصال به Docker hosts از راه دور:</p>
+            <ol>
+              <li>در منوی Environments روی "Add environment" کلیک کنید</li>
+              <li>نوع اتصال (Docker API, Agent) را انتخاب کنید</li>
+              <li>آدرس و پورت سرور مقصد را وارد کنید</li>
+              <li>در صورت نیاز، گواهی‌های TLS را تنظیم کنید</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">سوالات متداول</h4>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            آیا Portainer برای محیط production مناسب است؟
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            بله، Portainer برای محیط production مناسب است، اما باید نکات امنیتی را رعایت کنید. استفاده از HTTPS، تنظیم رمز قوی، و محدود کردن دسترسی‌ها ضروری است.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            تفاوت نسخه CE و Business چیست؟
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            نسخه Community Edition (CE) رایگان است و برای اکثر کاربران کافی است. نسخه Business شامل پشتیبانی حرفه‌ای، RBAC پیشرفته، Git sync، و Edge computing capabilities است.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            آیا می‌توان Portainer را با Kubernetes استفاده کرد؟
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            بله، Portainer از Kubernetes پشتیبانی می‌کند. می‌توانید خوشه‌های Kubernetes را اضافه کرده و pods، services، deployments و سایر منابع را مدیریت کنید.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            چگونه از داده‌های Portainer بکاپ بگیرم؟
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <div class="install-code">
+# بکاپ از volume
+docker run --rm -v portainer_data:/data -v $(pwd):/backup alpine tar czf /backup/portainer-backup.tar.gz -C /data .
+
+# بازیابی
+docker run --rm -v portainer_data:/data -v $(pwd):/backup alpine tar xzf /backup/portainer-backup.tar.gz -C /data
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">اطلاعات فنی</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5>مشخصات فنی</h5>
+            <ul>
+              <li><strong>Backend:</strong> Go</li>
+              <li><strong>Frontend:</strong> AngularJS</li>
+              <li><strong>دیتابیس:</strong> BoltDB (embedded)</li>
+              <li><strong>Architecture:</strong> Single binary</li>
+              <li><strong>API:</strong> RESTful API</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5>پیش‌نیازهای سیستم</h5>
+            <ul>
+              <li><strong>CPU:</strong> 1 Core</li>
+              <li><strong>RAM:</strong> 128MB</li>
+              <li><strong>Storage:</strong> 50MB</li>
+              <li><strong>Docker:</strong> نسخه 17.06+</li>
+              <li><strong>Browser:</strong> مرورگرهای مدرن</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">جایگزین‌های مشابه</h4>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>Rancher</h5>
+            <p class="text-muted">قدرتمندتر برای Kubernetes اما پیچیده‌تر</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>LazyDocker</h5>
+            <p class="text-muted">رابط terminal-based برای Docker</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>Docker Desktop</h5>
+            <p class="text-muted">راه‌حل رسمی Docker برای desktop</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">لینک‌های مفید</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li><a href="https://www.portainer.io/" target="_blank" class="text-decoration-none">🌐 وب‌سایت رسمی Portainer</a></li>
+          <li><a href="https://github.com/portainer/portainer" target="_blank" class="text-decoration-none">📦 مخزن GitHub</a></li>
+          <li><a href="https://docs.portainer.io/" target="_blank" class="text-decoration-none">📘 مستندات رسمی</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li><a href="https://demo.portainer.io" target="_blank" class="text-decoration-none">💻 دموی آنلاین</a></li>
+          <li><a href="https://hub.docker.com/r/portainer/portainer-ce" target="_blank" class="text-decoration-none">🐳 Docker Hub</a></li>
+          <li><a href="https://www.portainer.io/community" target="_blank" class="text-decoration-none">👥 انجمن کاربران</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="index.html" class="btn btn-outline-primary btn-lg">⬅ بازگشت به صفحه اصلی</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/shared.js"></script>
+  </body>
+</html>

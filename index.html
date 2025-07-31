@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کاتالوگ نرم‌افزارهای سازمانی</title>
+  <link href="https://bootswatch.com/5/materia/bootstrap.rtl.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/shared.css">
+
+  <style>
+
+    .software-logo {
+      height: 40px;
+      margin-left: 10px;
+    }
+    .category-section {
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+        animation: fadeIn 0.8s ease-in;
+    }
+    .category-title {
+      background: linear-gradient(135deg, #2196F3, #1976D2);
+      color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+  🌙
+</button>
+<div class="container">
+  <h1 class="text-center mb-5">کاتالوگ نرم‌افزارهای سازمانی</h1>
+  
+  <!-- زیرساخت اصلی -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>🐳 زیرساخت اصلی</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/docker.png" class="software-logo" alt="Docker logo">
+            <strong>Docker</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">پلتفرم containerization - زیرساخت اصلی همه نرم‌افزارها. تضمین عملکرد یکسان در محیط‌های مختلف و سهولت استقرار و مدیریت.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-danger">
+          <div class="card-header d-flex align-items-center">
+            <!-- <img src="images/portainer.webp" class="software-logo" alt="Portainer logo"> -->
+            <strong><a href="portainer.html">Portainer</a></strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت Docker با رابط گرافیکی - ابزار قدرتمند برای مدیریت containerها، imageها و networkهای Docker از طریق رابط وب ساده و کاربرپسند.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مدیریت پروژه و وظایف -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>📋 مدیریت پروژه و وظایف</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/vikunja.webp" class="software-logo" alt="Vikunja logo">
+            <strong>Vikunja</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت وظایف و پروژه - ابزار متن‌باز با رابط کاربری مدرن برای برنامه‌ریزی و پیگیری وظایف. قابلیت‌های تقویمی، برچسب‌گذاری و فیلترهای پیشرفته.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/focalboard.webp" class="software-logo" alt="Focalboard logo">
+            <strong>Focalboard</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت پروژه بصری - جایگزین متن‌باز Trello با قابلیت‌های Kanban، مدیریت وظایف و پیگیری پیشرفت در محیط بصری و کاربرپسند.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/plane.webp" class="software-logo" alt="Plane logo">
+            <strong>Plane</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">جایگزین Jira - پلتفرم مدیریت پروژه پیشرفته با UI مدرن، مناسب برای تیم‌های نرم‌افزاری و مدیریت Agile.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/taiga.png" class="software-logo" alt="Taiga logo">
+            <strong>Taiga</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت پروژه Agile - ابزار ویژه تیم‌های چابک با پشتیبانی از Scrum، Kanban و مدیریت backlog.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/openproject.webp" class="software-logo" alt="OpenProject logo">
+            <strong>OpenProject</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت پروژه سازمانی - راه‌حل جامع برای مدیریت پروژه‌های بزرگ با قابلیت‌های گانت چارت، ردیابی زمان و مدیریت منابع.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/wekan.png" class="software-logo" alt="Wekan logo">
+            <strong>Wekan</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">تخته Kanban ساده - ابزار سبک و سریع برای مدیریت وظایف به سبک Kanban با امکانات اساسی و کارآمد.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مدیریت اسناد و امضای دیجیتال -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>📄 مدیریت اسناد و امضای دیجیتال</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/docuseal.webp" class="software-logo" alt="Docuseal logo">
+            <strong>DocuSeal</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">امضای دیجیتال اسناد - پلتفرم متن‌باز امضای دیجیتال با امنیت بالا، تایید هویت، ردیابی وضعیت اسناد و پشتیبانی از قالب‌های مختلف.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/paperless.webp" class="software-logo" alt="Paperless logo">
+            <strong>Paperless-ngx</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت اسناد دیجیتال - سیستم هوشمند ذخیره‌سازی و سازمان‌دهی اسناد با OCR، جستجوی متنی قدرتمند و دسته‌بندی خودکار.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/cryptpad.webp" class="software-logo" alt="CryptPad logo">
+            <strong>CryptPad</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">ویرایش مشترک رمزنگاری شده - پلتفرم امن برای ویرایش همزمان اسناد با رمزنگاری end-to-end و حفظ حریم خصوصی.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/bookstack.webp" class="software-logo" alt="BookStack logo">
+            <strong>BookStack</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">ویکی و دانش‌پایه سازمانی - سیستم مدیریت دانش برای ایجاد و سازمان‌دهی مستندات، راهنماها و دانش‌پایه تیمی.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/dokuwiki.webp" class="software-logo" alt="DokuWiki logo">
+            <strong>DokuWiki</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مستندسازی تیمی - ویکی ساده و قدرتمند برای ایجاد و نگهداری مستندات فنی و سازمانی.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- تحلیل داده و هوش تجاری -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>📊 تحلیل داده و هوش تجاری</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/metabase.png" class="software-logo" alt="Metabase logo">
+            <strong>Metabase</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">تحلیل داده و گزارش‌گیری - ابزار متن‌باز ایجاد داشبورد و تحلیل داده‌ها برای تیم‌های غیرفنی با رابط ساده و گزارش‌های بصری.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/superset.webp" class="software-logo" alt="Apache Superset logo">
+            <strong>Apache Superset</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">پلتفرم BI پیشرفته - ابزار قدرتمند business intelligence با قابلیت‌های visualization پیشرفته و پشتیبانی از منابع داده متنوع.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/grafana.jpeg" class="software-logo" alt="Grafana logo">
+            <strong>Grafana</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">داشبورد و نمایش داده - پلتفرم پیشرفته برای ایجاد داشبوردهای زیبا و مانیتورینگ real-time با پشتیبانی از منابع داده مختلف.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/posthog.webp" class="software-logo" alt="PostHog logo">
+            <strong>PostHog</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">آنالیتیک محصول - پلتفرم جامع آنالیز رفتار کاربران، A/B testing و product analytics برای بهبود تجربه کاربری.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/plausible.webp" class="software-logo" alt="Plausible logo">
+            <strong>Plausible</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">آنالیتیک وب privacy-focused - جایگزین ساده و قابل اعتماد Google Analytics با تمرکز بر حفظ حریم خصوصی کاربران.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- امنیت و مدیریت دسترسی -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>🔐 امنیت و مدیریت دسترسی</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/passbolt.webp" class="software-logo" alt="Passbolt logo">
+            <strong>Passbolt</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت رمز عبور تیمی - سیستم امن مدیریت و اشتراک‌گذاری رمزعبورها با رمزگذاری end-to-end و مدیریت دسترسی‌های دقیق.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/vauletwarden.png" class="software-logo" alt="Vaultwarden logo">
+            <strong>Vaultwarden</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">سرور Bitwarden - پیاده‌سازی سبک سرور Bitwarden برای مدیریت شخصی رمزعبورها با همه قابلیت‌های premium.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/authelia.webp" class="software-logo" alt="Authelia logo">
+            <strong>Authelia</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Single Sign-On و احراز هویت دومرحله‌ای - سیستم مدیریت دسترسی پیشرفته با پشتیبانی از 2FA، SSO و کنترل دسترسی دقیق.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/keycloak.webp" class="software-logo" alt="Keycloak logo">
+            <strong>Keycloak</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت هویت سازمانی - پلتفرم جامع Identity and Access Management برای سازمان‌های بزرگ با پشتیبانی از پروتکل‌های مختلف.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/lldap.webp" class="software-logo" alt="LLDAP logo">
+            <strong>LLDAP</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">سرور LDAP ساده - پیاده‌سازی سبک و ساده LDAP برای مدیریت کاربران و احراز هویت متمرکز.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ارتباطات و همکاری -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>💬 ارتباطات و همکاری</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/mattermost.svg" class="software-logo" alt="Mattermost logo">
+            <strong>Mattermost</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">پلتفرم ارتباطات تیمی - جایگزین قدرتمند Slack برای ارتباطات امن تیمی با قابلیت میزبانی داخلی و یکپارچه‌سازی با DevOps tools.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/Etherpad.jpeg" class="software-logo" alt="Etherpad logo">
+            <strong>Etherpad</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">ویرایش همزمان متن - ابزار ساده برای نوشتن و ویرایش مشترک اسناد در زمان واقعی با نمایش تغییرات لحظه‌ای.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/Rocket.Chat.png" class="software-logo" alt="Rocket.Chat logo">
+            <strong>Rocket.Chat</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">پلتفرم چت و همکاری - راه‌حل جامع ارتباطات تیمی با پشتیبانی از چت، ویدئو کال، فایل sharing و بات‌های هوشمند.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/element.webp" class="software-logo" alt="Element logo">
+            <strong>Element (Matrix)</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">پیام‌رسان غیرمتمرکز - پلتفرم ارتباطات امن و غیرمتمرکز با رمزگذاری end-to-end و قابلیت federation.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/jitsiMeet.png" class="software-logo" alt="Jitsi Meet logo">
+            <strong>Jitsi Meet</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">ویدئو کنفرانس - راه‌حل متن‌باز برای جلسات ویدئویی و کنفرانس بدون نیاز به نصب اپلیکیشن.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/bigbluebutton.webp" class="software-logo" alt="BigBlueButton logo">
+            <strong>BigBlueButton</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">وبینار و آموزش آنلاین - پلتفرم تخصصی برای کلاس‌های آنلاین، وبینارها و جلسات آموزشی با امکانات تعاملی.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- توسعه و DevOps -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>🔧 توسعه و DevOps</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/n8n.png" class="software-logo" alt="n8n logo">
+            <strong>n8n</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">اتوماسیون جریان کاری - پلتفرم قدرتمند اتوماسیون بدون کد با پشتیبانی از بیش از ۲۰۰ سرویس و امکان اجرای کدهای سفارشی.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/gitlab.webp" class="software-logo" alt="GitLab logo">
+            <strong>GitLab</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">پلتفرم DevOps جامع - راه‌حل کامل برای مدیریت کد، CI/CD، مدیریت پروژه و مانیتورینگ در یک پلتفرم یکپارچه.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/gitea.png" class="software-logo" alt="Gitea logo">
+            <strong>Gitea/Forgejo</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Git hosting سبک - جایگزین سبک GitHub برای میزبانی مخازن Git با رابط ساده و عملکرد بالا.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/jenkins.webp" class="software-logo" alt="Jenkins logo">
+            <strong>Jenkins</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">CI/CD پیشرفته - ابزار قدرتمند اتوماسیون build، test و deployment با پشتیبانی از هزاران پلاگین.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مانیتورینگ و نظارت -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>📈 مانیتورینگ و نظارت</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/uptimeKuma.jpeg" class="software-logo" alt="Uptime Kuma logo">
+            <strong>Uptime Kuma</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مانیتورینگ uptime - ابزار ساده و زیبا برای نظارت بر دسترسی‌پذیری سرویس‌ها و وب‌سایت‌ها با alert‌های هوشمند.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/prometheus.webp" class="software-logo" alt="Prometheus logo">
+            <strong>Prometheus</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مانیتورینگ پیشرفته - سیستم جامع جمع‌آوری متریک‌ها و هشدارهای هوشمند برای زیرساختها و اپلیکیشن‌ها.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/zabbix.webp" class="software-logo" alt="Zabbix logo">
+            <strong>Zabbix</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مانیتورینگ شبکه و سرور - راه‌حل سازمانی برای نظارت بر زیرساخت‌های IT، شبکه و سرورها با قابلیت‌های پیشرفته.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/librenms.webp" class="software-logo" alt="LibreNMS logo">
+            <strong>LibreNMS</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت و مانیتورینگ شبکه - ابزار تخصصی برای کشف خودکار و مانیتورینگ تجهیزات شبکه.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/netdata.webp" class="software-logo" alt="Netdata logo">
+            <strong>Netdata</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مانیتورینگ real-time - داشبورد زنده عملکرد سیستم با نمایش آنی متریک‌های سیستم و اپلیکیشن‌ها.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مدیریت محتوا و وب -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>🌐 مدیریت محتوا و وب</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 border-success">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/nextCloud.png" class="software-logo" alt="Nextcloud logo">
+            <strong>Nextcloud</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">پلتفرم ابری شخصی - جایگزین جامع Google Workspace برای ذخیره‌سازی فایل، تقویم، مخاطبین، ایمیل و همکاری تیمی.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/directus.webp" class="software-logo" alt="Directus logo">
+            <strong>Directus</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Headless CMS پیشرفته - پلتفرم مدیریت محتوای بدون محدودیت با API خودکار و رابط کاربری قدرتمند برای مدیریت داده‌ها.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/strapi.webp" class="software-logo" alt="Strapi logo">
+            <strong>Strapi</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">CMS انعطاف‌پذیر - سیستم مدیریت محتوای headless با قابلیت سفارشی‌سازی بالا و API generation خودکار.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/ghost.webp" class="software-logo" alt="Ghost logo">
+            <strong>Ghost</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">پلتفرم انتشار محتوا - CMS مدرن برای بلاگ‌ها، خبرنامه‌ها و انتشار محتوای حرفه‌ای با طراحی زیبا.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/vvveb.png" class="software-logo" alt="vvveb logo">
+            <strong>vvveb</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">سازنده وب‌سایت بصری - ویرایشگر drag-and-drop برای طراحی وب‌سایت‌های واکنش‌گرا بدون نیاز به دانش برنامه‌نویسی.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/linkstack.webp" class="software-logo" alt="LinkStack logo">
+            <strong>LinkStack</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت لینک‌های شخصی - ابزار ایجاد صفحات لینک شخصی‌سازی شده برای جمع‌آوری تمام لینک‌های مهم در یک مکان.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- پشتیبانی مشتری -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>📞 پشتیبانی مشتری</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/freescout.png" class="software-logo" alt="FreeScout logo">
+            <strong>FreeScout</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت پشتیبانی مشتری - جایگزین ساده و کارآمد Zendesk برای مدیریت تیکت‌ها، پاسخ‌های آماده و پشتیبانی چندکاناله.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- نظرسنجی و بازخورد -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>📝 نظرسنجی و بازخورد</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/formbricks.webp" class="software-logo" alt="Formbricks logo">
+            <strong>Formbricks</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">نظرسنجی و جمع‌آوری بازخورد - پلتفرم متن‌باز ایجاد فرم‌های تعاملی، نظرسنجی‌ها و تحلیل بازخوردهای کاربران.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مدیریت کسب‌وکار -->
+  <div class="category-section">
+    <div class="category-title">
+      <h2>💼 مدیریت کسب‌وکار</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/erpnext.webp" class="software-logo" alt="ERPNext logo">
+            <strong>ERPNext</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">سیستم ERP جامع - راه‌حل کامل مدیریت منابع سازمانی شامل حسابداری، CRM، موجودی، منابع انسانی و تولید.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/odoo.png" class="software-logo" alt="Odoo logo">
+            <strong>Odoo</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">نرم‌افزار مدیریت کسب‌وکار - مجموعه ماژولار اپلیکیشن‌های تجاری شامل فروش، خرید، موجودی، تولید و مارکتینگ.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/invoiceninja.webp" class="software-logo" alt="Invoice Ninja logo">
+            <strong>Invoice Ninja</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">مدیریت فاکتور و پرداخت - سیستم صدور فاکتور، مدیریت مشتریان، ردیابی پرداخت‌ها و گزارش‌گیری مالی.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center">
+            <img src="images/akaunting.webp" class="software-logo" alt="Akaunting logo">
+            <strong>Akaunting</strong>
+          </div>
+          <div class="card-body">
+            <p class="card-text">حسابداری آنلاین - نرم‌افزار حسابداری ساده برای کسب‌وکارهای کوچک با قابلیت‌های فاکتور، گزارش‌گیری و مدیریت مالی.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- فوتر -->
+  <div class="mt-5 pt-4 border-top">
+    <div class="row">
+      <div class="col-md-8">
+        <h4>مزایای استفاده از این مجموعه</h4>
+        <ul class="list-unstyled">
+          <li>✅ کنترل کامل داده‌ها - تمامی اطلاعات در زیرساخت شما</li>
+          <li>✅ امنیت بالا - بدون وابستگی به سرویس‌های خارجی</li>
+          <li>✅ صرفه‌جویی هزینه - بدون نیاز به پرداخت ماهانه</li>
+          <li>✅ قابلیت سفارشی‌سازی - تطبیق کامل با نیازهای سازمان</li>
+          <li>✅ مقیاس‌پذیری - رشد همراه با نیازهای سازمان</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h4>خدمات پیاده‌سازی</h4>
+        <ul class="list-unstyled">
+          <li>🔧 مشاوره و طراحی معماری</li>
+          <li>🔧 نصب و پیکربندی ابزارها</li>
+          <li>🔧 یکپارچه‌سازی سیستم‌ها</li>
+          <li>🔧 آموزش تیم‌های فنی</li>
+          <li>🔧 پشتیبانی و نگهداری</li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p class="text-center text-muted">
+      این کاتالوگ شامل بهترین ابزارهای متن‌باز برای تحول دیجیتال سازمان‌ها می‌باشد.<br>
+      برای مشاوره تخصصی و پیاده‌سازی این راه‌حل‌ها با ما در تماس باشید.
+    </p>
+  </div>
+
+</div>
+<script>
+
+</script>
+<script src="./js/shared.js"></script>
+
+</body>
+</html>

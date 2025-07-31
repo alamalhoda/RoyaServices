@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taiga - معرفی نرم‌افزار</title>
+  <link href="https://bootswatch.com/5/materia/bootstrap.rtl.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/shared.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
+  
+  <div class="container">
+    <h1 class="mb-4">
+      <img src="https://taiga.io/v-1637857346/images/logo.svg" alt="Taiga logo" class="software-logo">
+      Taiga
+    </h1>
+
+    <p class="lead"><strong>Taiga</strong> یک پلتفرم قدرتمند و متن‌باز مدیریت پروژه است که به‌ویژه برای تیم‌های چابک (Agile) طراحی شده است. این ابزار ترکیبی از زیبایی، سادگی و قدرت را ارائه می‌دهد و به تیم‌های نرم‌افزاری کمک می‌کند تا پروژه‌های خود را با روش‌های Scrum و Kanban مدیریت کنند.</p>
+
+    <h4 class="section-title">ویژگی‌های کلیدی</h4>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">📋 Scrum & Kanban</h5>
+            <p class="card-text">پشتیبانی کامل از متدولوژی‌های چابک با تخته‌های Kanban و مدیریت Sprint</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">🎯 User Stories</h5>
+            <p class="card-text">مدیریت حرفه‌ای User Stories، Epic ها و Tasks با امکان اولویت‌بندی</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">🐛 Issue Tracking</h5>
+            <p class="card-text">سیستم پیشرفته مدیریت باگ‌ها و مسائل با دسته‌بندی و اولویت‌دهی</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">📊 Burndown Charts</h5>
+            <p class="card-text">نمودارهای پیشرفت و آنالیز عملکرد تیم با متریک‌های مفصل</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">🏠 Wiki & Documents</h5>
+            <p class="card-text">ویکی داخلی برای مستندسازی پروژه و اشتراک‌گذاری دانش تیمی</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">🔗 Git Integration</h5>
+            <p class="card-text">یکپارچه‌سازی با GitHub، GitLab و Bitbucket برای پیگیری commits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">نصب و راه‌اندازی</h4>
+    <div class="card">
+      <div class="card-body">
+        <h5>نصب با Docker Compose:</h5>
+        <div class="install-code">
+version: '3.8'
+
+services:
+  taiga-db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: taiga
+      POSTGRES_USER: taiga
+      POSTGRES_PASSWORD: password
+    volumes:
+      - taiga_db_data:/var/lib/postgresql/data
+    networks:
+      - taiga
+
+  taiga-back:
+    image: taigaio/taiga-back:latest
+    environment:
+      POSTGRES_DB: taiga
+      POSTGRES_USER: taiga
+      POSTGRES_PASSWORD: password
+      POSTGRES_HOST: taiga-db
+    networks:
+      - taiga
+    depends_on:
+      - taiga-db
+
+  taiga-front:
+    image: taigaio/taiga-front:latest
+    environment:
+      TAIGA_URL: "http://localhost:9000"
+      TAIGA_WEBSOCKETS_URL: "ws://localhost:9001"
+    ports:
+      - "9000:80"
+    networks:
+      - taiga
+    depends_on:
+      - taiga-back
+
+volumes:
+  taiga_db_data:
+
+networks:
+  taiga:
+        </div>
+        <p class="mt-3 text-muted">سپس با دستور <code>docker-compose up -d</code> اجرا کنید</p>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h4 class="text-success">✅ مزایا</h4>
+        <div class="card pros-cons-card">
+          <div class="card-body">
+            <ul class="mb-0">
+              <li>رابط کاربری زیبا و مدرن</li>
+              <li>پشتیبانی کامل از Agile/Scrum</li>
+              <li>قابلیت‌های تیمی پیشرفته</li>
+              <li>یکپارچه‌سازی قوی با Git</li>
+              <li>گزارش‌گیری و آنالیز دقیق</li>
+              <li>API کامل برای توسعه</li>
+              <li>سفارشی‌سازی بالا</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-warning">⚠️ محدودیت‌ها</h4>
+        <div class="card cons-card">
+          <div class="card-body">
+            <ul class="mb-0">
+              <li>نیاز به منابع سرور بیشتر</li>
+              <li>پیچیدگی نصب در محیط production</li>
+              <li>منحنی یادگیری متوسط</li>
+              <li>برخی قابلیت‌ها فقط در نسخه تجاری</li>
+              <li>نیاز به دانش Docker برای نصب</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">موارد استفاده</h4>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">💻 تیم‌های نرم‌افزاری</h5>
+            <p class="card-text">مدیریت پروژه‌های توسعه نرم‌افزار با روش‌های Agile و Scrum</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">🎨 استودیوهای طراحی</h5>
+            <p class="card-text">مدیریت پروژه‌های خلاقانه و همکاری تیمی در طراحی</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">🏢 سازمان‌های متوسط</h5>
+            <p class="card-text">پیاده‌سازی چابک در سازمان‌هایی که به دنبال تحول دیجیتال هستند</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">آمار پروژه</h4>
+    <div class="row text-center">
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>9k+</h3>
+            <p>ستاره GitHub</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>100k+</h3>
+            <p>کاربر فعال</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>10+</h3>
+            <p>سال توسعه</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>20+</h3>
+            <p>زبان پشتیبانی</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">مقایسه با رقبا</h4>
+    <div class="table-responsive comparison-table">
+      <table class="table table-striped mb-0">
+        <thead class="table-dark">
+          <tr>
+            <th>ویژگی</th>
+            <th>Taiga</th>
+            <th>Jira</th>
+            <th>Trello</th>
+            <th>Azure DevOps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>سادگی استفاده</strong></td>
+            <td>⭐⭐⭐⭐</td>
+            <td>⭐⭐</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐</td>
+          </tr>
+          <tr>
+            <td><strong>قابلیت‌های Agile</strong></td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐</td>
+            <td>⭐⭐⭐⭐</td>
+          </tr>
+          <tr>
+            <td><strong>رابط کاربری</strong></td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐</td>
+          </tr>
+          <tr>
+            <td><strong>قیمت (متن‌باز)</strong></td>
+            <td>✅ رایگان</td>
+            <td>❌ تجاری</td>
+            <td>⚠️ محدود</td>
+            <td>❌ تجاری</td>
+          </tr>
+          <tr>
+            <td><strong>سفارشی‌سازی</strong></td>
+            <td>⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐</td>
+            <td>⭐⭐⭐⭐</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="section-title text-danger">⚠️ نکات امنیتی</h4>
+    <div class="alert alert-security">
+      <ul class="mb-0">
+        <li><strong>رمز عبور:</strong> حتماً رمز عبور دیتابیس را از حالت پیش‌فرض تغییر دهید</li>
+        <li><strong>HTTPS:</strong> در محیط production از SSL/TLS استفاده کنید</li>
+        <li><strong>دسترسی:</strong> دسترسی به دیتابیس را فقط به سرویس‌های ضروری محدود کنید</li>
+        <li><strong>بکاپ:</strong> بکاپ منظم از دیتابیس و فایل‌های کاربران تهیه کنید</li>
+        <li><strong>به‌روزرسانی:</strong> نسخه‌های جدید را به‌طور منظم نصب کنید</li>
+      </ul>
+    </div>
+
+    <h4 class="section-title">سوالات متداول</h4>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            آیا Taiga مناسب تیم‌های کوچک است؟
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            بله، Taiga برای تیم‌های کوچک تا بزرگ مناسب است. رابط ساده آن باعث می‌شود حتی تیم‌های ۲-۳ نفره هم بتوانند از مزایای آن استفاده کنند.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            آیا نیاز به دانش فنی خاصی برای استفاده دارد؟
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            برای استفاده از Taiga نیاز به دانش خاصی نیست، اما برای نصب و راه‌اندازی باید با Docker و مفاهیم پایه سرور آشنا باشید.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            تفاوت نسخه متن‌باز و تجاری چیست؟
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            نسخه متن‌باز شامل اکثر قابلیت‌هاست. نسخه تجاری شامل پشتیبانی حرفه‌ای، یکپارچه‌سازی‌های بیشتر و برخی ویژگی‌های پیشرفته اضافی است.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">اطلاعات فنی</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5>مشخصات فنی</h5>
+            <ul>
+              <li><strong>Backend:</strong> Python (Django)</li>
+              <li><strong>Frontend:</strong> Angular + CoffeeScript</li>
+              <li><strong>دیتابیس:</strong> PostgreSQL</li>
+              <li><strong>Cache:</strong> Redis (اختیاری)</li>
+              <li><strong>Storage:</strong> File system یا S3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5>پیش‌نیازهای سیستم</h5>
+            <ul>
+              <li><strong>CPU:</strong> 2 Core</li>
+              <li><strong>RAM:</strong> 4GB (حداقل 2GB)</li>
+              <li><strong>Storage:</strong> 20GB+</li>
+              <li><strong>Docker:</strong> نسخه 20.10+</li>
+              <li><strong>Docker Compose:</strong> نسخه 1.28+</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">جایگزین‌های مشابه</h4>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>Jira</h5>
+            <p class="text-muted">قدرتمندتر اما پیچیده‌تر و تجاری</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>OpenProject</h5>
+            <p class="text-muted">متن‌باز اما کمتر متمرکز بر Agile</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>Plane</h5>
+            <p class="text-muted">جدیدتر و مدرن‌تر اما کمتر بالغ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">لینک‌های مفید</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li><a href="https://taiga.io/" target="_blank" class="text-decoration-none">🌐 وب‌سایت رسمی Taiga</a></li>
+          <li><a href="https://github.com/taigaio" target="_blank" class="text-decoration-none">📦 مخزن GitHub</a></li>
+          <li><a href="https://docs.taiga.io/" target="_blank" class="text-decoration-none">📘 مستندات رسمی</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li><a href="https://tree.taiga.io/login" target="_blank" class="text-decoration-none">💻 دموی آنلاین</a></li>
+          <li><a href="https://community.taiga.io/" target="_blank" class="text-decoration-none">👥 انجمن کاربران</a></li>
+          <li><a href="https://taiga.io/support/" target="_blank" class="text-decoration-none">🎓 منابع آموزشی</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="index.html" class="btn btn-outline-primary btn-lg">⬅ بازگشت به صفحه اصلی</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/shared.js"></script>
+</body>
+</html>

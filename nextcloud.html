@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nextcloud - معرفی نرم‌افزار</title>
+  <link href="https://bootswatch.com/5/materia/bootstrap.rtl.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/shared.css">
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
+  <div class="container">
+    <h1 class="mb-4">
+      <img src="https://nextcloud.com/media/nextcloud-logo-blue.svg" alt="Nextcloud logo" class="software-logo">
+      Nextcloud
+    </h1>
+
+    <p class="lead"><strong>Nextcloud</strong> یک پلتفرم ابری متن‌باز و قدرتمند است که به کاربران و سازمان‌ها امکان می‌دهد فایل‌ها، تقویم، مخاطبین، ایمیل، یادداشت‌ها و سایر داده‌ها را در سرور خود ذخیره کرده و به‌صورت امن به اشتراک بگذارند. این نرم‌افزار جایگزینی عالی برای Google Drive و Dropbox در فضای خصوصی است.</p>
+
+    <h4 class="section-title">ویژگی‌های کلیدی</h4>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card feature-card h-100"><div class="card-body text-center">
+          <h5 class="card-title">☁️ ذخیره‌سازی ابری</h5>
+          <p class="card-text">مدیریت فایل‌ها، فولدرها، اشتراک‌گذاری و همگام‌سازی با دستگاه‌ها</p>
+        </div></div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100"><div class="card-body text-center">
+          <h5 class="card-title">🔐 امنیت و حریم خصوصی</h5>
+          <p class="card-text">رمزنگاری سراسری، کنترل دسترسی دقیق، احراز هویت دو مرحله‌ای</p>
+        </div></div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100"><div class="card-body text-center">
+          <h5 class="card-title">📆 تقویم و مخاطبین</h5>
+          <p class="card-text">مدیریت و همگام‌سازی تقویم‌ها، رویدادها و دفترچه مخاطبین</p>
+        </div></div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100"><div class="card-body text-center">
+          <h5 class="card-title">📥 ایمیل و یادداشت‌ها</h5>
+          <p class="card-text">یکپارچگی با کلاینت ایمیل و ابزار یادداشت‌نویسی</p>
+        </div></div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100"><div class="card-body text-center">
+          <h5 class="card-title">🧩 اپلیکیشن‌های افزونه‌ای</h5>
+          <p class="card-text">نصب ده‌ها اپلیکیشن داخلی مانند Forms، Talk، Tasks و غیره</p>
+        </div></div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100"><div class="card-body text-center">
+          <h5 class="card-title">🧑‍🤝‍🧑 همکاری تیمی</h5>
+          <p class="card-text">ویرایش مشترک، گفت‌وگو، تماس تصویری و به‌اشتراک‌گذاری آنی</p>
+        </div></div>
+      </div>
+    </div>
+
+    <h4 class="section-title">نصب و راه‌اندازی</h4>
+    <div class="card">
+      <div class="card-body">
+        <h5>نصب با Docker Compose:</h5>
+        <div class="install-code">
+version: '3'
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - db:/var/lib/mysql
+
+  app:
+    image: nextcloud
+    ports:
+      - 8080:80
+    links:
+      - db
+    volumes:
+      - nextcloud:/var/www/html
+
+volumes:
+  db:
+  nextcloud:
+        </div>
+        <p class="mt-3 text-muted">پس از اجرای <code>docker-compose up -d</code>، به آدرس <code>http://localhost:8080</code> مراجعه کنید.</p>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h4 class="text-success">✅ مزایا</h4>
+        <div class="card pros-cons-card"><div class="card-body">
+          <ul>
+            <li>کنترل کامل بر داده‌ها</li>
+            <li>امکان میزبانی شخصی یا سازمانی</li>
+            <li>امنیت بالا و رمزنگاری سراسری</li>
+            <li>انعطاف‌پذیری با اپلیکیشن‌های قابل نصب</li>
+            <li>رابط کاربری زیبا و ساده</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-warning">⚠️ محدودیت‌ها</h4>
+        <div class="card cons-card"><div class="card-body">
+          <ul>
+            <li>نیاز به منابع سخت‌افزاری مناسب</li>
+            <li>پیچیدگی نسبی در پیکربندی برای کاربران مبتدی</li>
+            <li>برخی قابلیت‌ها در نسخه Enterprise</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+
+    <h4 class="section-title text-danger">⚠️ نکات امنیتی</h4>
+    <div class="alert alert-security">
+      <ul>
+        <li>استفاده از SSL در محیط production</li>
+        <li>بروزرسانی منظم نسخه‌های Nextcloud و اپلیکیشن‌ها</li>
+        <li>تنظیم محدودیت‌های دسترسی و استفاده از 2FA</li>
+        <li>استفاده از reverse proxy با firewall</li>
+        <li>تهیه بکاپ منظم از داده‌ها و دیتابیس</li>
+      </ul>
+    </div>
+
+    
+    <h4 class="section-title">اطلاعات فنی</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card"><div class="card-body">
+          <h5>مشخصات فنی</h5>
+          <ul>
+            <li><strong>زبان برنامه‌نویسی:</strong> PHP</li>
+            <li><strong>پایگاه داده:</strong> MySQL/MariaDB، PostgreSQL، SQLite</li>
+            <li><strong>وب‌سرور:</strong> Apache یا Nginx</li>
+            <li><strong>پروتکل‌ها:</strong> WebDAV، CalDAV، CardDAV</li>
+            <li><strong>پشتیبانی از LDAP و OAuth2:</strong> بله</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="col-md-6">
+        <div class="card"><div class="card-body">
+          <h5>پیش‌نیازهای سیستم</h5>
+          <ul>
+            <li><strong>CPU:</strong> حداقل 2 هسته</li>
+            <li><strong>RAM:</strong> حداقل 2 گیگابایت</li>
+            <li><strong>Storage:</strong> حداقل 20 گیگابایت (بسته به حجم فایل‌ها)</li>
+            <li><strong>PHP:</strong> نسخه 8.1 یا بالاتر</li>
+            <li><strong>Docker:</strong> پشتیبانی کامل</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+
+    <h4 class="section-title">جایگزین‌های مشابه</h4>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card"><div class="card-body text-center">
+          <h5>Seafile</h5>
+          <p class="text-muted">سبک و سریع، مناسب برای همگام‌سازی فایل</p>
+        </div></div>
+      </div>
+      <div class="col-md-4">
+        <div class="card"><div class="card-body text-center">
+          <h5>ownCloud</h5>
+          <p class="text-muted">پروژه‌ای قدیمی‌تر با ویژگی‌های مشابه</p>
+        </div></div>
+      </div>
+      <div class="col-md-4">
+        <div class="card"><div class="card-body text-center">
+          <h5>Pydio Cells</h5>
+          <p class="text-muted">راه‌حل قدرتمند سازمانی با UI پیشرفته</p>
+        </div></div>
+      </div>
+    </div>
+    <h4 class="section-title">لینک‌های مفید</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <ul>
+          <li><a href="https://nextcloud.com/" target="_blank">🌐 وب‌سایت رسمی Nextcloud</a></li>
+          <li><a href="https://github.com/nextcloud/server" target="_blank">📦 مخزن GitHub</a></li>
+          <li><a href="https://docs.nextcloud.com/" target="_blank">📘 مستندات رسمی</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul>
+          <li><a href="https://demo.nextcloud.com" target="_blank">💻 دموی آنلاین</a></li>
+          <li><a href="https://help.nextcloud.com/" target="_blank">👥 انجمن کاربران</a></li>
+        </ul>
+      </div>
+    </div>
+
+<div class="text-center mt-5">
+      <a href="index.html" class="btn btn-outline-primary btn-lg">⬅ بازگشت به صفحه اصلی</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/shared.js"></script>
+</body>
+</html>

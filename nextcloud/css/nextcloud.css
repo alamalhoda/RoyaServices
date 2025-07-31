@@ -1,0 +1,71 @@
+/* Nextcloud specific styles */
+.feature-icon {
+    font-size: 2rem;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    background-color: #0082c9;
+    color: white;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    color: #0082c9;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #0082c9;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: start;
+}
+
+.feature-list i {
+    margin-left: 1rem;
+    color: #0082c9;
+}
+
+.screenshot {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.comparison-table th {
+    background-color: #0082c9;
+    color: white;
+}
+
+.comparison-table td, .comparison-table th {
+    padding: 1rem;
+}
+
+.bg-nextcloud {
+    background-color: #0082c9;
+}
+
+.text-nextcloud {
+    color: #0082c9;
+}

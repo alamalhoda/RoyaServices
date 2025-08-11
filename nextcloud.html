@@ -8,16 +8,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/shared.css">
 </head>
-<body>
+<body class="page-nextcloud">
   <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
   <div class="container">
-    <h1 class="mb-4">
-      <img src="https://nextcloud.com/media/nextcloud-logo-blue.svg" alt="Nextcloud logo" class="software-logo">
-      Nextcloud
-    </h1>
+    <header class="bg-nextcloud text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">
+                <img src="https://nextcloud.com/media/nextcloud-logo-white.svg" alt="Nextcloud logo" class="software-logo" height="60">
+                Nextcloud
+            </h1>
+            <p class="lead">پلتفرم ابری متن‌باز و قدرتمند برای مدیریت فایل‌ها، ارتباطات و همکاری تیمی</p>
+        </div>
+    </header>
 
+        <!-- معرفی اصلی -->
+        <section class="mb-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
     <p class="lead"><strong>Nextcloud</strong> یک پلتفرم ابری متن‌باز و قدرتمند است که به کاربران و سازمان‌ها امکان می‌دهد فایل‌ها، تقویم، مخاطبین، ایمیل، یادداشت‌ها و سایر داده‌ها را در سرور خود ذخیره کرده و به‌صورت امن به اشتراک بگذارند. این نرم‌افزار جایگزینی عالی برای Google Drive و Dropbox در فضای خصوصی است.</p>
 
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/nextcloud-overview.png" alt="Nextcloud Overview" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </section>
     <h4 class="section-title">ویژگی‌های کلیدی</h4>
     <div class="row g-4">
       <div class="col-md-4">
@@ -57,6 +72,76 @@
         </div></div>
       </div>
     </div>
+ 
+          <!-- محصولات اصلی -->
+        <section class="mb-5">
+            <h4 class="section-title">محصولات Nextcloud</h4>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/nextcloud-files.png" class="card-img-top" alt="Nextcloud Files">
+                        <div class="card-body">
+                            <h5 class="card-title">Nextcloud Files</h5>
+                            <p class="card-text">مدیریت و اشتراک‌گذاری امن فایل‌ها</p>
+                            <a href="nextcloud/files.html" class="btn btn-primary">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/nextcloud-talk.png" class="card-img-top" alt="Nextcloud Talk">
+                        <div class="card-body">
+                            <h5 class="card-title">Nextcloud Talk</h5>
+                            <p class="card-text">ارتباطات تیمی و چت امن</p>
+                            <a href="nextcloud/talk.html" class="btn btn-primary">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/nextcloud-groupware.png" class="card-img-top" alt="Nextcloud Groupware">
+                        <div class="card-body">
+                            <h5 class="card-title">Nextcloud Groupware</h5>
+                            <p class="card-text">تقویم، ایمیل و مخاطبین</p>
+                            <a href="nextcloud/groupware.html" class="btn btn-primary">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/nextcloud-office.png" class="card-img-top" alt="Nextcloud Office">
+                        <div class="card-body">
+                            <h5 class="card-title">Nextcloud Office</h5>
+                            <p class="card-text">ویرایش آنلاین اسناد</p>
+                            <a href="nextcloud/office.html" class="btn btn-primary">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/nextcloud-security.png" class="card-img-top" alt="Security">
+                        <div class="card-body">
+                            <h5 class="card-title">امنیت و حریم خصوصی</h5>
+                            <p class="card-text">امنیت پیشرفته و کنترل کامل</p>
+                            <a href="nextcloud/security.html" class="btn btn-primary">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/nextcloud-versions.png" class="card-img-top" alt="Versions">
+                        <div class="card-body">
+                            <h5 class="card-title">نسخه‌ها و مدل‌های ارائه</h5>
+                            <p class="card-text">Community و Enterprise</p>
+                            <a href="nextcloud/versions.html" class="btn btn-primary">اطلاعات بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <h4 class="section-title">نصب و راه‌اندازی</h4>
     <div class="card">

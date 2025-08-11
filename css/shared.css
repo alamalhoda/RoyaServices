@@ -5,6 +5,29 @@ body {
       background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 0);
       background-size: 20px 20px;
     }
+
+    /* استایل‌های مخصوص صفحه اصلی (کاتالوگ) که از inline منتقل شده‌اند */
+    .catalog .software-logo {
+      height: 40px;
+      margin-left: 10px;
+    }
+    .category-section {
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+      animation: fadeIn 0.8s ease-in;
+    }
+    .category-title {
+      background: linear-gradient(135deg, #2196F3, #1976D2);
+      color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);} 
+      to {opacity: 1; transform: translateY(0);} 
+    }
     .software-logo {
       height: 50px;
       margin-left: 10px;
@@ -107,4 +130,9 @@ body {
     }
     [data-theme="dark"] .alert-security {
       background: linear-gradient(135deg, #cf6679, #d32f2f);
+    }
+
+    /* رنگ پس‌زمینه برند Nextcloud فقط برای صفحه ریشه Nextcloud */
+    .page-nextcloud .bg-nextcloud {
+      background-color: #0072C6;
     }

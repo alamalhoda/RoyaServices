@@ -1,49 +1,44 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرفی Nextcloud</title>
-    <link href="../css/shared.css" rel="stylesheet">
-    <link href="css/nextcloud.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Nextcloud - معرفی نرم‌افزار</title>
+    <link href="https://bootswatch.com/5/materia/bootstrap.rtl.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Vazirmatn, system-ui, -apple-system, "Segoe UI", sans-serif;
-        }
-        .bi {
-            vertical-align: -.125em;
-        }
-    </style>
+    <link href="css/nextcloud.css" rel="stylesheet">
+    <link href="../css/shared.css" rel="stylesheet">
 </head>
-<body>
-    <header class="bg-primary text-white text-center py-5">
-        <h1>معرفی Nextcloud</h1>
-        <p>پلتفرم قدرتمند برای مدیریت فایل‌ها، ارتباطات و همکاری تیمی</p>
+<body class="page-nextcloud">
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
+
+    <header class="bg-nextcloud text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">
+                <img src="https://nextcloud.com/media/nextcloud-logo-white.svg" alt="Nextcloud logo" class="software-logo" height="60">
+                Nextcloud
+            </h1>
+            <p class="lead">پلتفرم ابری متن‌باز و قدرتمند برای مدیریت فایل‌ها، ارتباطات و همکاری تیمی</p>
+        </div>
     </header>
+
     <main class="container my-5">
+        <!-- معرفی اصلی -->
         <section class="mb-5">
-            <h2>ویژگی‌های کلیدی Nextcloud</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="lead">Nextcloud یک پلتفرم متن‌باز است که امکان مدیریت فایل‌ها، ارتباطات و همکاری تیمی را فراهم می‌کند. این پلتفرم با تمرکز بر امنیت و حریم خصوصی، ابزارهای قدرتمندی برای کاربران ارائه می‌دهد.</p>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>مدیریت و اشتراک‌گذاری فایل‌ها</li>
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>ارتباطات تیمی و چت</li>
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>تقویم و مدیریت وظایف</li>
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>ویرایش آنلاین اسناد</li>
-                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>امنیت و رمزنگاری پیشرفته</li>
-                    </ul>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p class="lead">Nextcloud یک پلتفرم متن‌باز است که به کاربران و سازمان‌ها امکان می‌دهد فایل‌ها، تقویم، مخاطبین، ایمیل، یادداشت‌ها و سایر داده‌ها را در سرور خود ذخیره کرده و به‌صورت امن به اشتراک بگذارند.</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <img src="images/nextcloud-overview.png" alt="Nextcloud Overview" class="img-fluid rounded shadow">
                 </div>
             </div>
         </section>
-        <section>
-            <h3 class="mb-4">بخش‌های مختلف Nextcloud</h3>
+
+        <!-- محصولات اصلی -->
+        <section class="mb-5">
+            <h2 class="section-title">محصولات Nextcloud</h2>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card h-100">
@@ -76,6 +71,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
                 <div class="col">
                     <div class="card h-100">
@@ -109,9 +105,48 @@
                 </div>
             </div>
         </section>
+
+        <!-- ویژگی‌های کلیدی -->
+        <section class="mb-5">
+            <h2 class="section-title">ویژگی‌های کلیدی Nextcloud</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>مدیریت و اشتراک‌گذاری فایل‌ها</li>
+                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>ارتباطات تیمی و چت</li>
+                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>تقویم و مدیریت وظایف</li>
+                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>ویرایش آنلاین اسناد</li>
+                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>امنیت و رمزنگاری پیشرفته</li>
+            </ul>
+        </section>
+
+        <!-- نصب و راه‌اندازی -->
+        <section class="mb-5">
+            <h2 class="section-title">نصب و راه‌اندازی Nextcloud</h2>
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item">دانلود آخرین نسخه Nextcloud از <a href="https://nextcloud.com/install/#instructions-server" target="_blank">سایت رسمی Nextcloud</a>.</li>
+                <li class="list-group-item">فایل‌های دانلود شده را در سرور خود آپلود کنید.</li>
+                <li class="list-group-item">دستورات پایگاه داده و کاربر را در فایل <code>config/config.php</code> تنظیم کنید.</li>
+                <li class="list-group-item">مجوزهای لازم را برای پوشه‌ها و فایل‌ها تنظیم کنید.</li>
+                <li class="list-group-item">نصب را از طریق مرورگر وب با مراجعه به آدرس سرور خود کامل کنید.</li>
+            </ol>
+        </section>
+
+        <!-- پشتیبانی و جامعه -->
+        <section class="mb-5">
+            <h2 class="section-title">پشتیبانی و جامعه Nextcloud</h2>
+            <p class="lead">برای دریافت پشتیبانی و مشاوره، می‌توانید به منابع زیر مراجعه کنید:</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="bi bi-forum text-primary me-2"></i><a href="https://help.nextcloud.com" target="_blank">فروم پشتیبانی Nextcloud</a></li>
+                <li class="list-group-item"><i class="bi bi-github text-primary me-2"></i><a href="https://github.com/nextcloud" target="_blank">گیت‌هاب Nextcloud</a></li>
+                <li class="list-group-item"><i class="bi bi-documentation text-primary me-2"></i><a href="https://docs.nextcloud.com" target="_blank">مستندات Nextcloud</a></li>
+            </ul>
+        </section>
     </main>
+
     <footer class="bg-dark text-white text-center py-3">
         <p>© 2025 Nextcloud</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/shared.js"></script>
 </body>
 </html>

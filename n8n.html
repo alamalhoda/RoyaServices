@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>n8n - معرفی نرم‌افزار</title>
+  <link href="https://bootswatch.com/5/materia/bootstrap.rtl.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/shared.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="page-n8n">
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
+  
+  <header class="bg-n8n text-white text-center py-5 page-header">
+    <div class="container">
+      <h1 class="display-4">
+        <i class="fa-solid fa-code-branch logo-icon" aria-hidden="true"></i>
+        <span>n8n</span>
+      </h1>
+      <p class="lead">پلتفرم اتوماسیون کاری مبتنی بر نود - Fair-Code Workflow Automation</p>
+    </div>
+  </header>
+  
+  <nav class="breadcrumb-container" aria-label="breadcrumb">
+    <ol class="breadcrumb container py-2 mb-0">
+      <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
+      <li class="breadcrumb-item active" aria-current="page">n8n</li>
+    </ol>
+  </nav>
+
+  <div class="container">
+    <!-- معرفی اصلی -->
+    <section class="mb-5">
+      <div class="row align-items-center">
+        <div class="col-lg-12">
+          <p class="lead"><strong>n8n</strong> (بخوانید "n-eight-n") یک ابزار قدرتمند و منعطف اتوماسیون workflow است که به کاربران امکان می‌دهد تا فرآیندهای کاری خود را با اتصال سرویس‌های مختلف به یکدیگر اتوماتیک کنند. این پلتفرم با رابط کاربری visual و node-based، امکان ساخت workflow های پیچیده را بدون نیاز به کدنویسی فراهم می‌کند.</p>
+        </div>
+        
+      </div>
+    </section>
+
+    <h4 class="section-title">ویژگی‌های کلیدی</h4>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">🔗 300+ Integration</h5>
+            <p class="card-text">اتصال با بیش از 300 سرویس مختلف شامل Google Workspace، Slack، GitHub، و غیره</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">🎨 Visual Workflow Builder</h5>
+            <p class="card-text">ساخت workflow های پیچیده با رابط drag & drop بدون نیاز به کدنویسی</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">🔧 Custom Code Support</h5>
+            <p class="card-text">امکان اجرای کد JavaScript، Python و Function nodes برای منطق پیشرفته</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">📊 Data Processing</h5>
+            <p class="card-text">تبدیل، فیلتر و پردازش داده‌ها بین سرویس‌های مختلف</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">⏰ Scheduling & Triggers</h5>
+            <p class="card-text">اجرای workflows بر اساس زمان‌بندی، webhook ها یا تغییرات داده</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">🏢 Self-Hosted</h5>
+            <p class="card-text">کنترل کامل بر داده‌ها با امکان میزبانی در سرور شخصی</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">نصب و راه‌اندازی</h4>
+    <div class="card">
+      <div class="card-body">
+        <h5>نصب با Docker:</h5>
+        <div class="install-code">
+# نصب سریع با Docker
+docker run -it --rm --name n8n -p 5678:5678 n8nio/n8n
+
+# یا با volume برای ذخیره داده‌ها
+docker run -it --rm --name n8n -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt-3">
+      <div class="card-body">
+        <h5>نصب با Docker Compose:</h5>
+        <div class="install-code">
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_DATABASE=n8n
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_USER=n8n
+      - DB_POSTGRESDB_PASSWORD=n8n
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=password
+    volumes:
+      - n8n_data:/home/node/.n8n
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_DB: n8n
+      POSTGRES_USER: n8n
+      POSTGRES_PASSWORD: n8n
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  n8n_data:
+  postgres_data:
+        </div>
+        <p class="mt-3 text-muted">پس از اجرا، به آدرس <code>http://localhost:5678</code> مراجعه کنید</p>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h4 class="text-success">✅ مزایا</h4>
+        <div class="card pros-cons-card">
+          <div class="card-body">
+            <ul class="mb-0">
+              <li>رابط کاربری بصری و شهودی</li>
+              <li>تعداد بالا integrationها</li>
+              <li>قابلیت self-hosting</li>
+              <li>پشتیبانی از کد سفارشی</li>
+              <li>مدل Fair-Code licensing</li>
+              <li>جامعه فعال و مستندات خوب</li>
+              <li>نسخه رایگان قدرتمند</li>
+              <li>قابلیت پردازش داده‌های پیچیده</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-warning">⚠️ محدودیت‌ها</h4>
+        <div class="card cons-card">
+          <div class="card-body">
+            <ul class="mb-0">
+              <li>منحنی یادگیری برای workflows پیچیده</li>
+              <li>مصرف منابع بالا در workflows سنگین</li>
+              <li>برخی integrationها هنوز Beta</li>
+              <li>نیاز به دانش فنی برای setup پیشرفته</li>
+              <li>محدودیت execution در نسخه رایگان cloud</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">موارد استفاده</h4>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">📧 Marketing Automation</h5>
+            <p class="card-text">اتوماسیون ایمیل مارکتینگ، lead nurturing و CRM sync</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">📊 Data Sync</h5>
+            <p class="card-text">همگام‌سازی داده‌ها بین CRM، Google Sheets، دیتابیس و سایر ابزارها</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">🔔 Notification Systems</h5>
+            <p class="card-text">ارسال اطلاعیه‌های هوشمند به Slack، Teams، یا ایمیل</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">🏢 Business Process</h5>
+            <p class="card-text">اتوماسیون فرآیندهای تجاری، approval workflows و task management</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">📈 Analytics & Reporting</h5>
+            <p class="card-text">جمع‌آوری داده‌ها و تولید گزارش‌های خودکار</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">🤖 Social Media</h5>
+            <p class="card-text">مدیریت و اتوماسیون محتوا در شبکه‌های اجتماعی</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">آمار پروژه</h4>
+    <div class="row text-center">
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>40k+</h3>
+            <p>ستاره GitHub</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>300+</h3>
+            <p>Integration موجود</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>5+</h3>
+            <p>سال توسعه</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card stats-card">
+          <div class="card-body">
+            <h3>100k+</h3>
+            <p>کاربر فعال</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">مقایسه با رقبا</h4>
+    <div class="table-responsive comparison-table">
+      <table class="table table-striped mb-0">
+        <thead class="table-dark">
+          <tr>
+            <th>ویژگی</th>
+            <th>n8n</th>
+            <th>Zapier</th>
+            <th>Microsoft Power Automate</th>
+            <th>Make (Integromat)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>سادگی استفاده</strong></td>
+            <td>⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐</td>
+          </tr>
+          <tr>
+            <td><strong>تعداد Integrations</strong></td>
+            <td>⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐</td>
+          </tr>
+          <tr>
+            <td><strong>قابلیت سفارشی‌سازی</strong></td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐</td>
+            <td>⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐</td>
+          </tr>
+          <tr>
+            <td><strong>قیمت</strong></td>
+            <td>✅ Self-hosted رایگان</td>
+            <td>❌ تجاری</td>
+            <td>⚠️ محدود رایگان</td>
+            <td>⚠️ محدود رایگان</td>
+          </tr>
+          <tr>
+            <td><strong>Data Privacy</strong></td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐</td>
+            <td>⭐⭐⭐⭐</td>
+            <td>⭐⭐⭐</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="section-title text-danger">⚠️ نکات امنیتی</h4>
+    <div class="alert alert-security">
+      <ul class="mb-0">
+        <li><strong>احراز هویت:</strong> حتماً Basic Auth یا OAuth را فعال کنید</li>
+        <li><strong>HTTPS:</strong> در محیط production از SSL استفاده کنید</li>
+        <li><strong>Environment Variables:</strong> اطلاعات حساس را در متغیرهای محیطی نگه دارید</li>
+        <li><strong>Network Security:</strong> دسترسی به پورت n8n را محدود کنید</li>
+        <li><strong>Database Security:</strong> رمز عبور قوی برای دیتابیس تنظیم کنید</li>
+        <li><strong>Webhook Security:</strong> از webhook authentication استفاده کنید</li>
+        <li><strong>Backup:</strong> بکاپ منظم از workflows و دیتابیس تهیه کنید</li>
+      </ul>
+    </div>
+
+    <h4 class="section-title">نمونه Workflows محبوب</h4>
+    <div class="accordion" id="workflowExamples">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#email-slack">
+            اطلاع‌رسانی ایمیل‌های جدید در Slack
+          </button>
+        </h2>
+        <div id="email-slack" class="accordion-collapse collapse" data-bs-parent="#workflowExamples">
+          <div class="accordion-body">
+            <p><strong>مراحل:</strong></p>
+            <ol>
+              <li>Gmail Trigger: نظارت بر ایمیل‌های جدید</li>
+              <li>IF Node: فیلتر کردن ایمیل‌های مهم</li>
+              <li>Slack Node: ارسال پیام به کانال</li>
+            </ol>
+            <p>این workflow به صورت خودکار ایمیل‌های مهم را در کانال Slack اعلام می‌کند.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#crm-sync">
+            همگام‌سازی CRM با Google Sheets
+          </button>
+        </h2>
+        <div id="crm-sync" class="accordion-collapse collapse" data-bs-parent="#workflowExamples">
+          <div class="accordion-body">
+            <p><strong>مراحل:</strong></p>
+            <ol>
+              <li>Webhook Trigger: دریافت داده‌های جدید از CRM</li>
+              <li>Set Node: پردازش و تمیز کردن داده‌ها</li>
+              <li>Google Sheets Node: افزودن ردیف جدید</li>
+              <li>Gmail Node: ارسال تأیید</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#social-media">
+            پست خودکار در شبکه‌های اجتماعی
+          </button>
+        </h2>
+        <div id="social-media" class="accordion-collapse collapse" data-bs-parent="#workflowExamples">
+          <div class="accordion-body">
+            <p><strong>مراحل:</strong></p>
+            <ol>
+              <li>Cron Trigger: زمان‌بندی روزانه</li>
+              <li>RSS Feed Node: خواندن محتوای جدید</li>
+              <li>Twitter Node: پست در توییتر</li>
+              <li>LinkedIn Node: پست در لینکدین</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">سوالات متداول</h4>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            تفاوت n8n با Zapier چیست؟
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            n8n متن‌باز است و می‌توانید آن را در سرور خود نصب کنید، در حالی که Zapier یک سرویس ابری است. n8n قابلیت سفارشی‌سازی بیشتری دارد و امکان اجرای کد JavaScript را فراهم می‌کند.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            آیا n8n برای مبتدیان مناسب است؟
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            بله، رابط visual n8n برای مبتدیان مناسب است. اما برای workflows پیچیده ممکن است نیاز به یادگیری مفاهیم پایه داشته باشید. مستندات و template های آماده کمک زیادی می‌کند.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            آیا می‌توان از n8n برای پردازش داده‌های حساس استفاده کرد؟
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            بله، با نصب self-hosted کنترل کامل بر داده‌ها دارید. فقط باید نکات امنیتی مثل HTTPS، احراز هویت قوی و رمزنگاری را رعایت کنید.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            چگونه workflow های خود را بک‌آپ کنم؟
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            می‌توانید workflows را به صورت JSON export کنید یا از volume دیرکتوری ~/.n8n بک‌آپ تهیه کنید. همچنین می‌توانید از Git برای version control استفاده کنید.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">اطلاعات فنی</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5>مشخصات فنی</h5>
+            <ul>
+              <li><strong>Backend:</strong> Node.js (TypeScript)</li>
+              <li><strong>Frontend:</strong> Vue.js</li>
+              <li><strong>دیتابیس:</strong> SQLite, MySQL, PostgreSQL</li>
+              <li><strong>Message Queue:</strong> Redis (اختیاری)</li>
+              <li><strong>API:</strong> RESTful API</li>
+              <li><strong>Webhooks:</strong> پشتیبانی کامل</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5>پیش‌نیازهای سیستم</h5>
+            <ul>
+              <li><strong>Node.js:</strong> نسخه 16+</li>
+              <li><strong>CPU:</strong> 1-2 Core</li>
+              <li><strong>RAM:</strong> 2GB (حداقل 1GB)</li>
+              <li><strong>Storage:</strong> 5GB+</li>
+              <li><strong>Docker:</strong> نسخه 20+</li>
+              <li><strong>Browser:</strong> مرورگرهای مدرن</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">جایگزین‌های مشابه</h4>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>Zapier</h5>
+            <p class="text-muted">سرویس ابری محبوب اما تجاری</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>Microsoft Power Automate</h5>
+            <p class="text-muted">راه‌حل مایکروسافت برای اتوماسیون</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>Node-RED</h5>
+            <p class="text-muted">ابزار IBM برای IoT و automation</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>Make (Integromat)</h5>
+            <p class="text-muted">پلتفرم visual automation قدرتمند</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>Apache Airflow</h5>
+            <p class="text-muted">برای data pipeline ها و ETL</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5>IFTTT</h5>
+            <p class="text-muted">ساده‌تر اما محدودتر</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="section-title">لینک‌های مفید</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li><a href="https://n8n.io/" target="_blank" class="text-decoration-none">🌐 وب‌سایت رسمی n8n</a></li>
+          <li><a href="https://github.com/n8n-io/n8n" target="_blank" class="text-decoration-none">📦 مخزن GitHub</a></li>
+          <li><a href="https://docs.n8n.io/" target="_blank" class="text-decoration-none">📘 مستندات رسمی</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li><a href="https://n8n.io/workflows/" target="_blank" class="text-decoration-none">🔗 Template های آماده</a></li>
+          <li><a href="https://community.n8n.io/" target="_blank" class="text-decoration-none">👥 انجمن کاربران</a></li>
+          <li><a href="https://n8n.io/integrations/" target="_blank" class="text-decoration-none">🧩 لیست Integrations</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="index.html" class="btn btn-outline-primary btn-lg">⬅ بازگشت به صفحه اصلی</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/shared.js"></script>
+</body>
+</html>

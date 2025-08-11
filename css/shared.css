@@ -143,3 +143,19 @@ body {
       margin-left: 10px;
       vertical-align: middle;
     }
+
+    /* هدر عمومی صفحات */
+    .page-header {
+      background-color:  #0072C6;
+      color: #fff;
+      padding: 3rem 0;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+    }
+    .page-header h1,
+    .page-header .lead {
+      color: #fff;
+    }
+    .breadcrumb-container {
+      background: #f8f9fa;
+    }

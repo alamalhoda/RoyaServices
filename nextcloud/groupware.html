@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nextcloud Groupware - مدیریت کارهای گروهی</title>
-    <link href="../css/shared.css" rel="stylesheet">
     <link href="css/nextcloud.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
-    
+    <link href="https://bootswatch.com/5/materia/bootstrap.rtl.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/shared.css" rel="stylesheet">
+
 </head>
-<body>
+<body class="page-nextcloud">
     <header class="bg-nextcloud text-white text-center py-5">
         <div class="container">
-            <h1>Nextcloud Groupware</h1>
+            <h1>
+                <i class="fa-solid fa-people-group logo-icon" aria-hidden="true"></i>
+                <span>Nextcloud Groupware</span>
+            </h1>
             <p class="lead">مدیریت یکپارچه تقویم، ایمیل و مخاطبین</p>
         </div>
     </header>
@@ -75,8 +78,12 @@
             <h2 class="section-title">ویژگی‌های پیشرفته</h2>
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <img src="images/groupware-calendar.png" alt="تقویم Nextcloud" class="img-fluid screenshot mb-4">
-                    <img src="images/groupware-mail.png" alt="ایمیل Nextcloud" class="img-fluid screenshot">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-calendar-days fa-6x text-primary" aria-hidden="true"></i>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-envelope-open-text fa-6x text-primary" aria-hidden="true"></i>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <ul class="feature-list">

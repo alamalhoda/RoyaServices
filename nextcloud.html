@@ -7,6 +7,7 @@
   <link href="https://bootswatch.com/5/materia/bootstrap.rtl.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/shared.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="page-nextcloud">
   <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
@@ -14,8 +15,8 @@
     <header class="bg-nextcloud text-white text-center py-5">
         <div class="container">
             <h1 class="display-4">
-                <img src="https://nextcloud.com/media/nextcloud-logo-white.svg" alt="Nextcloud logo" class="software-logo" height="60">
-                Nextcloud
+                <i class="fa-solid fa-cloud logo-icon" aria-hidden="true"></i>
+                <span>Nextcloud</span>
             </h1>
             <p class="lead">پلتفرم ابری متن‌باز و قدرتمند برای مدیریت فایل‌ها، ارتباطات و همکاری تیمی</p>
         </div>
@@ -29,7 +30,9 @@
 
                 </div>
                 <div class="col-lg-6">
-                    <img src="images/nextcloud-overview.png" alt="Nextcloud Overview" class="img-fluid rounded shadow">
+                    <div class="text-center py-4">
+                        <i class="fa-solid fa-diagram-project fa-7x text-primary" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </section>
@@ -79,7 +82,9 @@
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card h-100">
-                        <img src="images/nextcloud-files.png" class="card-img-top" alt="Nextcloud Files">
+                        <div class="text-center pt-4">
+                            <i class="fa-solid fa-folder-open fa-3x text-primary" aria-hidden="true"></i>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Nextcloud Files</h5>
                             <p class="card-text">مدیریت و اشتراک‌گذاری امن فایل‌ها</p>
@@ -89,7 +94,9 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="images/nextcloud-talk.png" class="card-img-top" alt="Nextcloud Talk">
+                        <div class="text-center pt-4">
+                            <i class="fa-solid fa-comments fa-3x text-primary" aria-hidden="true"></i>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Nextcloud Talk</h5>
                             <p class="card-text">ارتباطات تیمی و چت امن</p>
@@ -99,7 +106,9 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="images/nextcloud-groupware.png" class="card-img-top" alt="Nextcloud Groupware">
+                        <div class="text-center pt-4">
+                            <i class="fa-solid fa-people-group fa-3x text-primary" aria-hidden="true"></i>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Nextcloud Groupware</h5>
                             <p class="card-text">تقویم، ایمیل و مخاطبین</p>
@@ -112,7 +121,9 @@
             <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
                 <div class="col">
                     <div class="card h-100">
-                        <img src="images/nextcloud-office.png" class="card-img-top" alt="Nextcloud Office">
+                        <div class="text-center pt-4">
+                            <i class="fa-solid fa-file-lines fa-3x text-primary" aria-hidden="true"></i>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Nextcloud Office</h5>
                             <p class="card-text">ویرایش آنلاین اسناد</p>
@@ -122,7 +133,9 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="images/nextcloud-security.png" class="card-img-top" alt="Security">
+                        <div class="text-center pt-4">
+                            <i class="fa-solid fa-shield-halved fa-3x text-primary" aria-hidden="true"></i>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">امنیت و حریم خصوصی</h5>
                             <p class="card-text">امنیت پیشرفته و کنترل کامل</p>
@@ -132,7 +145,9 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="images/nextcloud-versions.png" class="card-img-top" alt="Versions">
+                        <div class="text-center pt-4">
+                            <i class="fa-solid fa-code-branch fa-3x text-primary" aria-hidden="true"></i>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">نسخه‌ها و مدل‌های ارائه</h5>
                             <p class="card-text">Community و Enterprise</p>
